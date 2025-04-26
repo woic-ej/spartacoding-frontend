@@ -34,6 +34,7 @@ export const TodoList = ({
             onChange={() => handleToggleTodo(todo.id)}
           />
           <ListItemText
+            data-testid={`todo-item-text-${todo.id}`}
             primary={todo.text}
             secondary={`Deadline: ${format(
               parseISO(todo.deadline),
