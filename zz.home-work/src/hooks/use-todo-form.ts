@@ -34,8 +34,8 @@ export const useTodoForm = () => {
     todo: string;
     deadline: string;
   }) => {
-    if (todo.length >= 100) return false;
-    if (isPastDate(deadline)) return false;
+    if (!todo.trim() || todo.length >= 100) return false;
+    if (!deadline || isPastDate(deadline)) return false;
     return true;
   };
 
